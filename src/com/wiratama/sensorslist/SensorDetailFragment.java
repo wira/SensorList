@@ -105,6 +105,50 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		switch (mSensor.getType()) {
+			case Sensor.TYPE_ACCELEROMETER : {
+		        txt1.setVisibility(1);
+		        txt2.setVisibility(1);
+		        txt3.setVisibility(1);
+
+		        txt1.setText("x : " + String.valueOf(event.values[0]));
+		        txt2.setText("y : " + String.valueOf(event.values[1]));
+		        txt3.setText("z : " + String.valueOf(event.values[2]));
+				break;
+			}
+			case Sensor.TYPE_AMBIENT_TEMPERATURE : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_GAME_ROTATION_VECTOR : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_GEOMAGNETIC_ROTATION_VECTOR : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_GRAVITY : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_GYROSCOPE : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_LIGHT : {
+		        txt1.setVisibility(1);
+
+		        txt1.setText("Light (in lux) : " + String.valueOf(event.values[0]));
+				break;
+			}
+			case Sensor.TYPE_LINEAR_ACCELERATION : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_MAGNETIC_FIELD : {
+				// TODO : Fill
+				break;
+			}
 			case Sensor.TYPE_PRESSURE : {
 				float pressure_value = 0.0f;
 			    float height = 0.0f;
@@ -114,8 +158,34 @@ public class SensorDetailFragment extends Fragment implements SensorEventListene
 		        
 		        txt1.setVisibility(1);
 		        txt2.setVisibility(1);
-		        txt1.setText("Pressure Value : " + String.valueOf(pressure_value));
+		        txt1.setText("Pressure Value (in hPa / Millibar) : " + String.valueOf(pressure_value));
 		        txt2.setText("Height : " + String.valueOf(height));
+				break;
+			}
+			case Sensor.TYPE_PROXIMITY : {
+		        txt1.setVisibility(1);
+
+		        txt1.setText("Distance : " + String.valueOf(event.values[0]));
+				break;
+			}
+			case Sensor.TYPE_RELATIVE_HUMIDITY : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_ROTATION_VECTOR : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_SIGNIFICANT_MOTION : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_STEP_COUNTER : {
+				// TODO : Fill
+				break;
+			}
+			case Sensor.TYPE_STEP_DETECTOR : {
+		        // TODO : Fill
 				break;
 			}
 			default : break;
